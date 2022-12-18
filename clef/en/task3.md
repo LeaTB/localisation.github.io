@@ -1,83 +1,83 @@
-# SimpleText@CLEF-2022 Tasks
+# SimpleText@CLEF-2022 Tâches
 
-[Home](./) | [Call for papers](./CFP) | [Important dates](./dates) | [Tasks](./tasks)  | [Tools](./tools) 
-[Program](./program) | [Publications](./publications) | [Organisers](./organisers) | [Contact](./contact) | [CLEF-2023](https://simpletext-project.com/2023/clef)
+[Accueil](./) | [Call for papers](./CFP) | [Dates importantes](./dates) | [Tâches](./tasks)  | [Outils](./tools)  
+[Programme](./program) | [Publications](./publications) | [Organisateurs](./organisers) | [Contacts](./contact) | [CLEF-2023](https://simpletext-project.com/2023/clef)
 
-
----
-
-## SimpleText Task Guidelines
-
-We invite you to submit both automatic and manual runs! Manual intervention should be reported.
 
 ---
 
-<button>[Access](./tasks)</button> | <button>[Shared task 1](./task1)</button> | <button>[Shared task 2](./task2)</button> | <button>[Shared task 3](./task3)</button>| <button>[Unshared task 4](./task4)</button>
+## Directives pour les tâches SimpleText
+
+Nous vous invitons à soumettre à la fois des exécutions automatiques et manuelles ! Les interventions manuelles doivent être signalées.
+
+---
+
+<button>[Accès](./tasks)</button> | <button>[Tâche 1](./task1)</button> | <button>[Tâche 2](./task2)</button> | <button>[Tâche 3](./task3)</button>| <button>[Tâche 4](./task4)</button>
 
 <br>
 
-## Task 3: Rewrite this! Given a query, simplify passages from scientific abstracts. 
+## Tâche 3 : Réécrivez ceci ! En fonction d'une requête, simplifiez des passages de résumés scientifiques. 
 
-The goal of this task is to provide a simplified version of text passages (sentences) with regard to a query. Participants will be provided with queries and abstracts of scientific papers. The abstracts can be split into sentences. The simplified passages will be evaluated manually with eventual use of aggregating metrics.
+Le but de cette tâche est de fournir une version simplifiée de passages de texte (phrases) par rapport à une requête. Les participants recevront des requêtes et des résumés d'articles scientifiques. Les résumés peuvent être divisés en phrases. Les passages simplifiés seront évalués manuellement avec l'utilisation éventuelle de métriques d'agrégation.
 
-**Input format:** 
-The train and and the test data are provided in JSON and CSV formats with the following fields:
-* *snt_id*: a unique passage (sentence) identifier
-* *source_snt*: passage texte
-* *doc_id*: a unique source document identifier
-* *query_id*: a query ID
-* *query_text*: simplification should be done with regard to this query
+**Format d'entrée:** 
+Les données de formation et de test sont fournies dans les formats JSON et CSV avec les champs suivants :
+* *snt_id* : un identifiant unique de passage (phrase).
+*source_snt* : texte du passage
+*doc_id* : un identifiant unique du document source
+*query_id* : un identifiant de requête
+*query_text* : la simplification doit être faite par rapport à cette requête.
 
-*Input example:*
+*Exemple d'entrée:*
 
-*{"snt_id":"G11.1_2892036907_2","source_snt":"With the ever increasing number of unmanned aerial vehicles getting involved in activities in the civilian and commercial domain, there is an increased need for autonomy in these systems too.","doc_id":2892036907,"query_id":"G11.1","query_text":"drones"}*
+*{"snt_id" : "G11.1_2892036907_2", "source_snt" : "Avec le nombre croissant de véhicules aériens sans pilote participant à des activités dans le domaine civil et commercial, il existe un besoin accru d'autonomie dans ces systèmes également.", "doc_id":2892036907, "query_id" : "G11.1", "query_text" : "drones"}*
 
-**Output format:** 
-List of terms to be contextualized in a **JSON format** or a tabulated file TSV (for manual runs) with the following fields:
-* *run_id*: Run ID starting with **team_id_task_3_**
-* *manual*: Whether the run is manual {0,1}
-* *snt_id*: a unique passage (sentence) identifier from the input file 
-* *simplified_snt*: Text of the simplified passage 
+**Format de sortie:** 
+Liste des termes à contextualiser dans un format **JSON** ou un fichier tabulé TSV (pour les exécutions manuelles) avec les champs suivants :
+* *run_id* : ID de l'exécution commençant par **team_id_task_3_**.
+* *manual* : Si l'exécution est manuelle {0,1}
+*snt_id* : un identifiant unique de passage (phrase) du fichier d'entrée. 
+*snt_simplifié* : Texte du passage simplifié 
 
-*Output example*:
-{"run_id":"BTU_task_3_run1","manual":1,"snt_id":"G11.1_2892036907_2","simplified_snt":"Drones are increasingly used in the civilian and commercial domain and need to be autonomous."}
+*Exemple de sortie* :
+{"run_id" : "BTU_task_3_run1", "manual":1, "snt_id" : "G11.1_2892036907_2", "simplified_snt" : "Les drones sont de plus en plus utilisés dans le domaine civil et commercial et doivent être autonomes."}
 
-*Output format checker*
+*Vérificateur de format de sortie*
 
-You can use this python3 script to check the output format. The script requires Python 3 and the Pandas library:
-[Download python output checker](../check_format.py)
+Vous pouvez utiliser ce script python3 pour vérifier le format de sortie. Ce script nécessite Python 3 et la bibliothèque Pandas :
+[Télécharger le vérificateur de sortie python](../check_format.py)
 
-**Disclaimer:** By downloading and using these data, you agree to the terms of use. Any use of the data for any purpose other than academic research, would be in violation of the intended use of these data. 
+**Disclaimer:** En téléchargeant et en utilisant ces données, vous acceptez les conditions d'utilisation. Toute utilisation des données à des fins autres que la recherche universitaire constituerait une violation de l'utilisation prévue de ces données. 
 
-Therefore, by downloading and using these data you give the following assurances with respect to the SimpleText data:
-1. You will not use nor permit others to use the data in the SimpleText datasets in any way except for classes and academic research.
-2. You will not at any time disclose, give, or transmit (in any manner or form or for any purpose) the data (or any portion thereof) to any location or person, including but not limiting to making the data available on the Internet, and copying the data onto any cloud-based storage system.
-3. You will not release nor permit others to release the dataset or any part of it to any person. 
+Par conséquent, en téléchargeant et en utilisant ces données, vous donnez les assurances suivantes concernant les données SimpleText :
+1. Vous n'utiliserez pas et ne permettrez pas à d'autres d'utiliser les données dans les ensembles de données SimpleText de quelque manière que ce soit, sauf pour les cours et la recherche universitaire.
+2. Vous ne divulguerez, ne donnerez ou ne transmettrez à aucun moment (de quelque manière ou forme que ce soit ou à quelque fin que ce soit) les données (ou toute partie de celles-ci) à tout endroit ou personne, y compris, mais sans s'y limiter, la mise à disposition des données sur Internet et la copie des données sur tout système de stockage basé sur le cloud.
+3. Vous ne libérerez pas et ne permettrez pas à d'autres de libérer l'ensemble des données ou toute partie de celles-ci à toute personne. 
 
-In case of violation of the conditions for access to the data for scientific purposes, this access may be withdrawn from the research entity and/or from the researcher. The research entity may also be liable to pay compensation for damages for third parties or asked to take disciplinary action against the offending researcher. 
+En cas de violation des conditions d'accès aux données à des fins scientifiques, cet accès peut être retiré à l'entité de recherche et/ou au chercheur. L'entité de recherche peut également être tenue de payer des dommages et intérêts à des tiers ou être invitée à prendre des mesures disciplinaires à l'encontre du chercheur fautif. 
 
-### Evaluation
-The simplified passages will be evaluated manually with eventual use of aggregating metrics.
+### Évaluation
+Les passages simplifiés seront évalués manuellement avec l'utilisation éventuelle de métriques d'agrégation.
 
-### Result submission:
-Participants should put their run results into the folder Documents created for their user and **submit them by email** to *contact@simpletext-project.com*.
+### Soumission des résultats :
+Les participants doivent placer leurs résultats d'exécution dans le dossier Documents créé pour leur utilisateur et **soumettre les résultats par email** à *contact@simpletext-project.com*.
 
-The email subject has to be in the format **\[CLEF TASK 3] TEAM_ID**. 
+L'objet du courriel doit être au format **[CLEF TASK 3] TEAM_ID**. 
 
-Runs should be submitted as a <ins>ZIP folder of the corresponding JSON files</ins>. Manual runs are allowed to be submitted in a CSV format. 
+Les runs doivent être soumis sous forme de <ins>Dossier ZIP des fichiers JSON correspondants</ins>. Les runs manuels peuvent être soumis au format CSV. 
 
-A confirmation email will be sent within 2 days after the submission deadline. 
+Un courriel de confirmation sera envoyé dans les 2 jours suivant la date limite de soumission. 
 
-## How to Cite
-If you extend or use this work, please cite the [paper](https://doi.org/10.1007/978-3-031-13643-6_28) where it was introduced:
+## Comment citer
+Si vous étendez ou utilisez ce travail, veuillez citer le [papier] (https://doi.org/10.1007/978-3-031-13643-6_28) où il a été présenté :
 ```
 Liana Ermakova, Eric SanJuan, Jaap Kamps, Stéphane Huet, Irina Ovchinnikova, Diana Nurbakova, 
-Sílvia Araújo, Radia Hannachi, Elise Mathurin, and Patrice Bellot. 2022. 
-Overview of the CLEF 2022 SimpleText Lab: Automatic Simplification of Scientific Texts. 
-In Experimental IR Meets Multilinguality, Multimodality, and Interaction: 13th International 
-Conference of the CLEF Association, CLEF 2022, Bologna, Italy, September 5–8, 2022, Proceedings. 
-Springer-Verlag, Berlin, Heidelberg, 470–494. https://doi.org/10.1007/978-3-031-13643-6_28
+Sílvia Araújo, Radia Hannachi, Elise Mathurin, et Patrice Bellot. 2022. 
+Aperçu du laboratoire SimpleText de CLEF 2022 : Simplification automatique de textes scientifiques. 
+In Experimental IR Meets Multilinguality, Multimodality, and Interaction : 13th International 
+Conference of the CLEF Association, CLEF 2022, Bologna, Italy, September 5-8, 2022, Proceedings. 
+Springer-Verlag, Berlin, Heidelberg, 470-494. https://doi.org/10.1007/978-3-031-13643-6_28
 ```
-[Paper](https://doi.org/10.1007/978-3-031-13643-6_28)
+[Article](https://doi.org/10.1007/978-3-031-13643-6_28)
 
-[Dowload .BIB](../../BibTeX/ermakova_overview_2022.bib)
+[Télécharger .BIB](../../BibTeX/ermakova_overview_2022.bib)
