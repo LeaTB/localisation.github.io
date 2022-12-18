@@ -8,7 +8,7 @@
 
 ---
 
-<img align="left" src="https://github.com/simpletext-madics/2021/blob/main/clef/simpletext-logo-blue.png?raw=true" width="100"/>  
+<img align="left" src="https://github.com/LeaTB/localisation.github.io/blob/francais/clef/FR.png?raw=true" width="100"/>  
 
 ## SimpleText : Simplification automatique de textes scientifiques
 
