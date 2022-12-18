@@ -1,4 +1,4 @@
-# SimpleText@CLEF-2022 Tâche
+# SimpleText@CLEF-2022 Tâches
 
 [Accueil](./) | [Call for papers](./CFP) | [Dates importantes](./dates) | [Tâches](./tasks)  | [Outils](./tools)  
 [Programme](./program) | [Publications](./publications) | [Organisateurs](./organisers) | [Contacts](./contact) | [CLEF-2023](https://simpletext-project.com/2023/clef)
