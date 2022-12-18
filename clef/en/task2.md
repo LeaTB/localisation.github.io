@@ -1,63 +1,63 @@
-# SimpleText@CLEF-2022 Tasks
+# SimpleText@CLEF-2022 Tâche
 
-[Home](./) | [Call for papers](./CFP) | [Important dates](./dates) | [Tasks](./tasks)  | [Tools](./tools) 
-[Program](./program) | [Publications](./publications) | [Organisers](./organisers) | [Contact](./contact) | [CLEF-2023](https://simpletext-project.com/2023/clef)
+[Accueil](./) | [Call for papers](./CFP) | [Dates importantes](./dates) | [Tâches](./tasks)  | [Outils](./tools)  
+[Programme](./program) | [Publications](./publications) | [Organisateurs](./organisers) | [Contacts](./contact) | [CLEF-2023](https://simpletext-project.com/2023/clef)
 
-
----
-
-## SimpleText Task Guidelines
-
-We invite you to submit both automatic and manual runs! Manual intervention should be reported.
 
 ---
 
-<button>[Access](./tasks)</button> | <button>[Shared task 1](./task1)</button> | <button>[Shared task 2](./task2)</button> | <button>[Shared task 3](./task3)</button>| <button>[Unshared task 4](./task4)</button>
+## Directives pour les tâches SimpleText
+
+Nous vous invitons à soumettre à la fois des exécutions automatiques et manuelles ! Les interventions manuelles doivent être signalées.
+
+---
+
+<button>[Accès](./tasks)</button> | <button>[Tâche 1](./task1)</button> | <button>[Tâche 2](./task2)</button> | <button>[Tâche 3](./task3)</button>| <button>[Tâche 4](./task4)</button>
 
 <br>
 
-## Task 2: What is unclear? Given a passage and a query, rank terms/concepts that are required to be explained for understanding this passage (definitions, context, applications,..).
+## Tâche 2 : Qu'est-ce qui n'est pas clair ? Étant donné un passage et une requête, classez les termes/concepts qui doivent être expliqués pour comprendre ce passage (définitions, contexte, applications,..).
 
-The goal of this task is to decide which terms (up to 5) require explanation and contextualization to help a reader to understand a complex scientific text – for example, with regard to a query, terms that need to be contextualized (with a definition, example and/or use-case). 
-For each passage, participants should provide a ranked list of difficult terms with corresponding scores on the scale 1-3 (3 to be the most difficult terms, while the meaning of terms scored 1 can be derived or guessed) and on the scale 1-5 (5 to be the most difficult terms). 
-Passages (sentences) are considered to be independent, i.e. difficult term repetition is allowed. Term pooling and automatic metrics (accuracy of term binary classification, NDCG for term ranking, kappa statistics...) will be used to evaluate these results.
+L'objectif de cette tâche est de déterminer quels termes (jusqu'à 5) nécessitent une explication et une contextualisation pour aider un lecteur à comprendre un texte scientifique complexe - par exemple, en ce qui concerne une requête, les termes qui doivent être contextualisés (avec une définition, un exemple et/ou un cas d'utilisation). 
+Pour chaque passage, les participants doivent fournir une liste classée des termes difficiles avec les notes correspondantes sur l'échelle 1-3 (3 pour les termes les plus difficiles, tandis que le sens des termes notés 1 peut être déduit ou deviné) et sur l'échelle 1-5 (5 pour les termes les plus difficiles). 
+Les passages (phrases) sont considérés comme indépendants, c'est-à-dire que la répétition de termes difficiles est autorisée. Le regroupement des termes et des mesures automatiques (précision de la classification binaire des termes, NDCG pour le classement des termes, statistiques de kappa...) seront utilisés pour évaluer ces résultats.
 
-**Input format:** 
-The train and the test data are provided in JSON and CSV formats with the following fields:
-* `snt_id`: a unique passage (sentence) identifier
-* `source_snt`: passage text
-* `doc_id`: a unique source document identifier
-* `query_id`: a query ID
-* `query_text`: difficult terms should be extracted from sentences with regard to this query
+**Format d'entrée:** 
+Les données de formation et de test sont fournies dans les formats JSON et CSV avec les champs suivants :
+* `snt_id` : un identifiant unique de passage (phrase)
+* `source_snt` : texte du passage
+* `doc_id` : un identifiant unique du document source
+* `query_id` : un identifiant de requête
+* `query_text` : les termes difficiles à extraire des phrases par rapport à cette requête.
 
-*Input example:*
+*Exemple de saisie:*
 
 ```
 {"snt_id":"G06.2_2548923997_3",
-"source_snt":"These communication systems render self-driving vehicles vulnerable to many types of malicious attacks, such as Sybil attacks, Denial of Service (DoS), black hole, grey hole and wormhole attacks.",
+"source_snt":"Ces systèmes de communication rendent les véhicules à conduite autonome vulnérables à de nombreux types d'attaques malveillantes, telles que les attaques Sybil, les dénis de service (DoS), les trous noirs, les trous gris et les trous de ver.",
 "doc_id":2548923997,
 "query_id":"G06.2",
-"query_text":"self driving"}
+"query_text":"conduite autonome"}
 ```
 
-**Output format:** 
+**Format de sortie:** 
 
-List of terms to be contextualized in a **JSON format** or a tabulated file TSV (for manual runs) with the following fields:
-* `run_id`: Run ID starting with **team_id_task_id_**
-* `manual`: Whether the run is manual {0,1}
-* `snt_id`: a unique passage (sentence) identifier from the input file 
-* `term`: Term or other phrase to be explained
-* `term_rank_snt`: term difficulty rank within the given sentence
-* `score_5`: term difficulty score on the scale from 1 to 5 (5 to be the most difficult terms)
-* `score_3`: term difficulty score on the scale from 1 to 3 (3 to be the most difficult terms)
+Liste des termes à contextualiser dans un format **JSON** ou un fichier tabulé TSV (pour les exécutions manuelles) avec les champs suivants :
+* `run_id` : ID de l'exécution commençant par **team_id_task_id_**.
+* `manual` : Si l'exécution est manuelle {0,1}
+* `snt_id` : Un identifiant unique de passage (phrase) du fichier d'entrée. 
+* `term` : Terme ou autre phrase à expliquer
+* `term_rank_snt` : rang de difficulté du terme dans la phrase donnée
+* `score_5` : score de difficulté du terme sur une échelle de 1 à 5 (5 étant le terme le plus difficile)
+* `score_3` : note de difficulté du terme sur une échelle de 1 à 3 (3 étant le terme le plus difficile).
 
-*Output example*:
+*Exemple de sortie* :
 
 ```{json}
 {"run_id":"NP_task_2_run1",
 "manual":1,
 "snt_id":"G06.2_2548923997_3",
-"term":"black hole attack",
+"terme" : "attaque par trou noir",
 "term_rank_snt":1,
 "score_5":5,
 "score_3":3},
@@ -65,7 +65,7 @@ List of terms to be contextualized in a **JSON format** or a tabulated file TSV 
 {"run_id":"NP_task_2_run1",
 "manual":1,
 "snt_id":"G06.2_2548923997_3",
-"term":"grey hole attack",
+"terme" : "attaque par trou gris",
 "term_rank_snt":2,
 "score_5":5,
 "score_3":3},
@@ -73,7 +73,7 @@ List of terms to be contextualized in a **JSON format** or a tabulated file TSV 
 {"run_id":"NP_task_2_run1",
 "manual":1,
 "snt_id":"G06.2_2548923997_3",
-"term":"Sybil attack",
+"term" : "Sybil attack",
 "term_rank_snt":3,
 "score_5":5,
 "score_3":3},
@@ -81,56 +81,56 @@ List of terms to be contextualized in a **JSON format** or a tabulated file TSV 
 {"run_id":"NP_task_2_run1",
 "manual":1,
 "snt_id":"G06.2_2548923997_3",
-"term":"wormhole attack",
+"term" : "attaque par trou de ver",
 "term_rank_snt":4,
 "score_5":5,"score_3":3},
 
 {"run_id":"NP_task_2_run1",
 "manual":1,
 "snt_id":"G06.2_2548923997_3",
-"term":"Denial of service attack",
+"term" : "Attaque par déni de service",
 "term_rank_snt":5,
 "score_5":4,
 "score_3":3}
 ```
 
-*Output format checker*
+*Vérification du format de sortie*
 
-You can use this python3 script to check the output format. The script requires Python 3 and the Pandas library:
+Vous pouvez utiliser ce script python3 pour vérifier le format de sortie. Ce script nécessite Python 3 et la bibliothèque Pandas :
 [Download python output checker](../check_format.py)
 
-**Disclaimer:** By downloading and using these data, you agree to the terms of use. Any use of the data for any purpose other than academic research, would be in violation of the intended use of these data. 
+**Disclaimer:** En téléchargeant et en utilisant ces données, vous acceptez les conditions d'utilisation. Toute utilisation des données à des fins autres que la recherche universitaire constituerait une violation de l'utilisation prévue de ces données. 
 
-Therefore, by downloading and using these data you give the following assurances with respect to the SimpleText data:
-1. You will not use nor permit others to use the data in the SimpleText datasets in any way except for classes and academic research.
-2. You will not at any time disclose, give, or transmit (in any manner or form or for any purpose) the data (or any portion thereof) to any location or person, including but not limiting to making the data available on the Internet, and copying the data onto any cloud-based storage system.
-3. You will not release nor permit others to release the dataset or any part of it to any person. 
+Par conséquent, en téléchargeant et en utilisant ces données, vous donnez les assurances suivantes concernant les données SimpleText :
+1. Vous n'utiliserez pas et ne permettrez pas à d'autres d'utiliser les données dans les ensembles de données SimpleText de quelque manière que ce soit, sauf pour les cours et la recherche universitaire.
+2. Vous ne divulguerez, ne donnerez ou ne transmettrez à aucun moment (de quelque manière ou forme que ce soit ou à quelque fin que ce soit) les données (ou toute partie de celles-ci) à tout endroit ou personne, y compris, mais sans s'y limiter, la mise à disposition des données sur Internet et la copie des données sur tout système de stockage basé sur le cloud.
+3. Vous ne libérerez pas et ne permettrez pas à d'autres de libérer l'ensemble des données ou toute partie de celles-ci à toute personne. 
 
-In case of violation of the conditions for access to the data for scientific purposes, this access may be withdrawn from the research entity and/or from the researcher. The research entity may also be liable to pay compensation for damages for third parties or asked to take disciplinary action against the offending researcher. 
+En cas de violation des conditions d'accès aux données à des fins scientifiques, cet accès peut être retiré à l'entité de recherche et/ou au chercheur. L'entité de recherche peut également être tenue de payer des dommages et intérêts à des tiers ou être invitée à prendre des mesures disciplinaires à l'encontre du chercheur fautif. 
 
 
-### Evaluation
-Term pooling and automatic metrics (accuracy of term binary classification, NDCG for term ranking, kappa statistics...) will be used to evaluate these results.
+### Évaluation
+Le regroupement des termes et les métriques automatiques (précision de la classification binaire des termes, NDCG pour le classement des termes, statistiques de kappa...) seront utilisés pour évaluer ces résultats.
 
-### Result submission:
-Participants should put their run results into the folder Documents created for their user and **submit them by email** to *contact@simpletext-project.com*.
+### Soumission des résultats :
+Les participants doivent placer leurs résultats d'exécution dans le dossier Documents créé pour leur utilisateur et **soumettre les résultats par email** à *contact@simpletext-project.com*.
 
-The email subject has to be in the format **\[CLEF TASK 2] TEAM_ID**. 
+L'objet du courriel doit être au format **[CLEF TASK 2] TEAM_ID**. 
 
-Runs should be submitted as a <ins>ZIP folder of the corresponding JSON files</ins>. Manual runs are allowed to be submitted in a CSV format. 
+Les exécutions doivent être soumises sous la forme d'un dossier <ins>ZIP des fichiers JSON correspondants</ins>. Les runs manuels peuvent être soumis au format CSV. 
 
-A confirmation email will be sent within 2 days after the submission deadline. 
+Un courriel de confirmation sera envoyé dans les 2 jours suivant la date limite de soumission. 
 
-## How to Cite
-If you extend or use this work, please cite the [paper](https://doi.org/10.1007/978-3-031-13643-6_28) where it was introduced:
+## Comment citer
+Si vous étendez ou utilisez ce travail, veuillez citer le [papier] (https://doi.org/10.1007/978-3-031-13643-6_28) où il a été présenté :
 ```
 Liana Ermakova, Eric SanJuan, Jaap Kamps, Stéphane Huet, Irina Ovchinnikova, Diana Nurbakova, 
-Sílvia Araújo, Radia Hannachi, Elise Mathurin, and Patrice Bellot. 2022. 
-Overview of the CLEF 2022 SimpleText Lab: Automatic Simplification of Scientific Texts. 
-In Experimental IR Meets Multilinguality, Multimodality, and Interaction: 13th International 
-Conference of the CLEF Association, CLEF 2022, Bologna, Italy, September 5–8, 2022, Proceedings. 
-Springer-Verlag, Berlin, Heidelberg, 470–494. https://doi.org/10.1007/978-3-031-13643-6_28
+Sílvia Araújo, Radia Hannachi, Elise Mathurin, et Patrice Bellot. 2022. 
+Aperçu du laboratoire SimpleText de CLEF 2022 : Simplification automatique de textes scientifiques. 
+In Experimental IR Meets Multilinguality, Multimodality, and Interaction : 13th International 
+Conference of the CLEF Association, CLEF 2022, Bologna, Italy, September 5-8, 2022, Proceedings. 
+Springer-Verlag, Berlin, Heidelberg, 470-494. https://doi.org/10.1007/978-3-031-13643-6_28
 ```
-[Paper](https://doi.org/10.1007/978-3-031-13643-6_28)
+[Article](https://doi.org/10.1007/978-3-031-13643-6_28)
 
-[Dowload .BIB](../../BibTeX/ermakova_overview_2022.bib)
+[Télécharger .BIB](../../BibTeX/ermakova_overview_2022.bib)
