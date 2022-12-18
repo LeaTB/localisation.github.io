@@ -4,11 +4,11 @@
 
 [Accueil](./) | [Call for papers](./CFP) | [Dates importantes](./dates) | [Tâches](./tasks)  | [Outils](./tools)  
 [Programme](./program) | [Publications](./publications) | [Organisateurs](./organisers) | [Contacts](./contact) | [CLEF-2023](https://simpletext-project.com/2023/clef)
-<!--- <img src="https://github.com/LeaTB/localisation.github.io/blob/francais/clef/logo.png" width="30">https://simpletext-project.com/2022/clef/') --->
+<!--- <img src="https://github.com/LeaTB/localisation.github.io/blob/francais/clef/logo2.png" width="30">https://simpletext-project.com/2022/clef/') --->
 
 ---
 
-<img align="left" src="https://github.com/LeaTB/localisation.github.io/blob/francais/clef/logo.png?raw=true" width="100"/>  
+<img align="left" src="https://github.com/LeaTB/localisation.github.io/blob/francais/clef/logo2.png?raw=true" width="100"/>  
 
 ## SimpleText : Simplification automatique de textes scientifiques
 
