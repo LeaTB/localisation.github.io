@@ -4,7 +4,7 @@
 
 [Accueil](./) | [Call for papers](./CFP) | [Dates importantes](./dates) | [Tâches](./tasks)  | [Outils](./tools)  
 [Programme](./program) | [Publications](./publications) | [Organisateurs](./organisers) | [Contacts](./contact) | [CLEF-2023](https://simpletext-project.com/2023/clef)
-<!--- <img src="https://github.com/simpletext-madics/2021/blob/main/clef/FR.png?raw=true" width="30">https://simpletext-project.com/2022/clef/') --->
+<!--- <img src="https://github.com/LeaTB/localisation.github.io/blob/francais/clef/FR.png" width="30">https://simpletext-project.com/2022/clef/') --->
 
 ---
 
@@ -106,4 +106,4 @@ Springer-Verlag, Berlin, Heidelberg, 470–494. https://doi.org/10.1007/978-3-03
 
 ---
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [<img src="https://github.com/LeaTB/localisation.github.io/blob/francais/clef/en/clef_logo_2022.png?raw=true" width="200">](http://www.clef-initiative.eu/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/simpletext-madics/2021/blob/main/clef/logo-clef-initiative.png?raw=true" width="200">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [<img src="https://github.com/LeaTB/localisation.github.io/blob/francais/clef/en/clef_logo_2022.png?raw=true" width="300">](http://www.clef-initiative.eu/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/simpletext-madics/2021/blob/main/clef/logo-clef-initiative.png?raw=true" width="200">
