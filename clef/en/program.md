@@ -7,8 +7,8 @@
 
 ------------------------------------------------------------
 
-* [inscription CLEF](https://clef2022.clef-initiative.eu/index.php?page=Pages/conferenceRegistration.html)
-* [programme CLEF](https://clef2022.clef-initiative.eu/index.php?page=Pages/programme.html)
+* [Inscription CLEF](https://clef2022.clef-initiative.eu/index.php?page=Pages/conferenceRegistration.html)
+* [Programme CLEF](https://clef2022.clef-initiative.eu/index.php?page=Pages/programme.html)
 * [Actes de la CLEF LNCS](https://link.springer.com/book/10.1007/978-3-031-13643-6)
 * [Notes de travail de la CLEF](http://ceur-ws.org/Vol-3180/)
 
